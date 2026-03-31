@@ -12,3 +12,4 @@ This folder contains the corrected weekly practice scripts and small files used 
 ## Purpose
 - Keep the class exercises separate from the assessed Week 11 project.
 - Preserve the original learning material while fixing obvious logic and syntax issues.
+- Use `../big-task-learning/` next if you want a guided path from weekly exercises into the Week 11 big task.

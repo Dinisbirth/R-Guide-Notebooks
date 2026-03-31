@@ -2,6 +2,8 @@
 
 This folder contains the final mini-project materials for the Week 11 assessment.
 
+If you want the guided practice version first, use `../big-task-learning/`.
+
 ## Layout
 - `scripts/`: R analysis and dashboard files.
 - `data/raw/`: source dataset.
