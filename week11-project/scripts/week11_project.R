@@ -2,15 +2,34 @@ library(dplyr)
 library(ggplot2)
 library(stringr)
 
-input_file <- "Tabular_DS_Jobs.csv"
-output_file <- "Jobs_clean.csv"
-output_dir <- "study_outputs"
+get_script_dir <- function() {
+  command_args <- commandArgs(trailingOnly = FALSE)
+  file_arg <- grep("^--file=", command_args, value = TRUE)
 
-if (!file.exists(input_file)) {
-  stop("Required file 'Tabular_DS_Jobs.csv' was not found in this folder.")
+  if (length(file_arg) > 0) {
+    return(dirname(normalizePath(sub("^--file=", "", file_arg[1]))))
+  }
+
+  current_frame <- sys.frames()[[1]]
+  if (!is.null(current_frame$ofile)) {
+    return(dirname(normalizePath(current_frame$ofile)))
+  }
+
+  normalizePath(getwd())
 }
 
-dir.create(output_dir, showWarnings = FALSE)
+script_dir <- get_script_dir()
+project_dir <- normalizePath(file.path(script_dir, ".."), mustWork = FALSE)
+input_file <- file.path(project_dir, "data", "raw", "Tabular_DS_Jobs.csv")
+output_file <- file.path(project_dir, "data", "processed", "Jobs_clean.csv")
+output_dir <- file.path(project_dir, "outputs")
+
+if (!file.exists(input_file)) {
+  stop("Required raw dataset was not found at week11-project/data/raw/Tabular_DS_Jobs.csv.")
+}
+
+dir.create(dirname(output_file), recursive = TRUE, showWarnings = FALSE)
+dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
 clean_names <- function(x) {
   x <- str_to_lower(str_trim(x))
@@ -353,7 +372,7 @@ capture.output(
     cat("Rows in raw data:", nrow(Jobs), "\n")
     cat("Rows after cleaning:", nrow(JobsClean), "\n")
     cat("Duplicate rows removed:", duplicate_rows, "\n")
-    cat("Saved cleaned data to:", output_file, "\n\n")
+    cat("Saved cleaned data to:", normalizePath(output_file, mustWork = FALSE), "\n\n")
 
     cat("Hypothesis test\n")
     cat("---------------\n")
@@ -383,5 +402,5 @@ capture.output(
 )
 
 cat("Mini-project workflow completed.\n")
-cat("Cleaned dataset saved to", output_file, "\n")
-cat("Plots and summary outputs saved in", output_dir, "\n")
+cat("Cleaned dataset saved to", normalizePath(output_file, mustWork = FALSE), "\n")
+cat("Plots and summary outputs saved in", normalizePath(output_dir, mustWork = FALSE), "\n")

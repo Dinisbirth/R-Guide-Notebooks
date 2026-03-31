@@ -2,10 +2,28 @@ library(dplyr)
 library(ggplot2)
 library(shiny)
 
-input_file <- "Jobs_clean.csv"
+get_script_dir <- function() {
+  command_args <- commandArgs(trailingOnly = FALSE)
+  file_arg <- grep("^--file=", command_args, value = TRUE)
+
+  if (length(file_arg) > 0) {
+    return(dirname(normalizePath(sub("^--file=", "", file_arg[1]))))
+  }
+
+  current_frame <- sys.frames()[[1]]
+  if (!is.null(current_frame$ofile)) {
+    return(dirname(normalizePath(current_frame$ofile)))
+  }
+
+  normalizePath(getwd())
+}
+
+script_dir <- get_script_dir()
+project_dir <- normalizePath(file.path(script_dir, ".."), mustWork = FALSE)
+input_file <- file.path(project_dir, "data", "processed", "Jobs_clean.csv")
 
 if (!file.exists(input_file)) {
-  stop("Required file 'Jobs_clean.csv' was not found in this folder. Run MiniProject.R first.")
+  stop("Required processed dataset was not found at week11-project/data/processed/Jobs_clean.csv. Run scripts/week11_project.R first.")
 }
 
 JobsClean <- read.csv(input_file, stringsAsFactors = FALSE)

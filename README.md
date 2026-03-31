@@ -1,22 +1,27 @@
 # R Guide Notebooks
 
-This repository contains my cleaned and organised R coursework materials for `CT7202 Data Analysis and Visualisation Principles`.
+Organised coursework repository for `CT7202 Data Analysis and Visualisation Principles`.
 
-## Repository Structure
-- `class-notes/`: corrected class scripts, supporting files, the Week 11 mini-project, the cleaned jobs dataset, and revision notes.
+## Structure
+- [`class-exercises/`](class-exercises): corrected weekly R scripts and small support files from class.
+- [`week11-project/`](week11-project): final assessed mini-project with scripts, data, docs, and outputs.
 
-## Key Week 11 Files
-- [class-notes/MiniProject.R](class-notes/MiniProject.R): final analysis workflow for cleaning, hypothesis testing, regression, classification, and clustering.
-- [class-notes/Dashboard (1).R](class-notes/Dashboard%20(1).R): Shiny dashboard for the cleaned jobs dataset.
-- [class-notes/Jobs_clean.csv](class-notes/Jobs_clean.csv): processed dataset ready for analysis and the dashboard.
-- [class-notes/Week11_Study_Guide.md](class-notes/Week11_Study_Guide.md): revision checklist and speaking points for the Week 11 task.
-- [class-notes/study_outputs/week11_brief_extracted.txt](class-notes/study_outputs/week11_brief_extracted.txt): plain-text extract of the assessment brief.
+## Quick Start
+1. Review [`week11-project/docs/Week11_Study_Guide.md`](week11-project/docs/Week11_Study_Guide.md).
+2. Run [`week11-project/scripts/week11_project.R`](week11-project/scripts/week11_project.R) in RStudio.
+3. Check the cleaned data in [`week11-project/data/processed/Jobs_clean.csv`](week11-project/data/processed/Jobs_clean.csv).
+4. Review generated files in [`week11-project/outputs/`](week11-project/outputs).
+5. Run [`week11-project/scripts/jobs_dashboard.R`](week11-project/scripts/jobs_dashboard.R) for the optional dashboard.
 
-## How To Use
-1. Open `class-notes/MiniProject.R` in RStudio and run it to regenerate the cleaned dataset and the study outputs.
-2. Open `class-notes/Dashboard (1).R` after the cleaned dataset exists if you want the interactive dashboard.
-3. Use `class-notes/Week11_Study_Guide.md` for revision and presentation prep.
+## Week 11 Contents
+- [`week11-project/data/raw/Tabular_DS_Jobs.csv`](week11-project/data/raw/Tabular_DS_Jobs.csv): raw jobs dataset.
+- [`week11-project/data/processed/Jobs_clean.csv`](week11-project/data/processed/Jobs_clean.csv): cleaned dataset.
+- [`week11-project/scripts/week11_project.R`](week11-project/scripts/week11_project.R): cleaning, hypothesis testing, regression, classification, and clustering.
+- [`week11-project/scripts/jobs_dashboard.R`](week11-project/scripts/jobs_dashboard.R): Shiny dashboard for interactive exploration.
+- [`week11-project/docs/Week11_BIG_Task.docx`](week11-project/docs/Week11_BIG_Task.docx): original brief.
+- [`week11-project/docs/Week11_Study_Guide.md`](week11-project/docs/Week11_Study_Guide.md): revision checklist and talking points.
+- [`week11-project/outputs/week11_brief_extracted.txt`](week11-project/outputs/week11_brief_extracted.txt): plain-text brief extract for quick review.
 
 ## Notes
-- The class scripts in `class-notes/` were corrected so their logic is cleaner and more consistent with the original exercises.
-- The repository keeps the class files together so the original relative paths still work.
+- The weekly exercise files were kept separate from the assessed project so GitHub navigation is clearer.
+- The Week 11 scripts were updated to use the repository structure rather than assuming all files sit in one folder.
