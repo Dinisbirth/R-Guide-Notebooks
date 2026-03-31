@@ -1,0 +1,34 @@
+Week 11 BIG Task – Good luck!
+This task builds on the Week 5 benchmark. You will extend your cleaned dataset work into modelling, interpretation, and communication.This aligns with Weeks 6–10 content and prepares you for the Week 11 assessment.
+Objectives
+Apply one hypothesis test
+Apply one linear regression model
+Apply one classification algorithm
+Apply one clustering technique
+Interpret outputs using statistics and visualisations
+Communicate findings to different audiences
+Reflect on limitations and assumptions
+Hypothesis Testing
+Define one clear hypothesis
+Justify your test choice
+Interpret results clearly
+Modelling Requirements
+Linear regression (define variables and interpret outputs)
+Classification model (evaluate performance)
+Clustering method (interpret groupings)
+Visual Exploration
+Use plots to support modelling decisions
+Ensure visuals are analytical, not decorative
+Clearly label all outputs
+Optional: Shiny dashboard
+Communication Task
+You will present your findings to ONE of the following audiences:
+Technical audience
+Stakeholder audience
+Non-technical decision-makers
+Important: Your audience will be assigned ONE WEEK before submission. You are allowed to work in groups of three or four on the code and the presentation. You only need to upload the presentation to the Moodle submission.
+Reflection
+Model assumptions
+Limitations
+Justification of methods
+Potential improvements
