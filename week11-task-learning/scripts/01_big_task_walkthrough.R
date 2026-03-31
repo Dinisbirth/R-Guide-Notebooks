@@ -35,7 +35,7 @@ clean_names <- function(x) {
 script_dir <- get_script_dir()
 repo_dir <- normalizePath(file.path(script_dir, "..", ".."), mustWork = FALSE)
 raw_file <- file.path(repo_dir, "week11-project", "data", "raw", "Tabular_DS_Jobs.csv")
-output_dir <- file.path(repo_dir, "big-task-learning", "outputs")
+output_dir <- file.path(repo_dir, "week11-task-learning", "outputs")
 clean_output_file <- file.path(output_dir, "training_jobs_clean.csv")
 summary_file <- file.path(output_dir, "big_task_training_summary.txt")
 

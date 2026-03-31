@@ -21,7 +21,7 @@ get_script_dir <- function() {
 script_dir <- get_script_dir()
 repo_dir <- normalizePath(file.path(script_dir, "..", ".."), mustWork = FALSE)
 raw_file <- file.path(repo_dir, "week11-project", "data", "raw", "Tabular_DS_Jobs.csv")
-output_dir <- file.path(repo_dir, "big-task-learning", "outputs", "my-practice-run")
+output_dir <- file.path(repo_dir, "week11-task-learning", "outputs", "my-practice-run")
 
 dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
 
